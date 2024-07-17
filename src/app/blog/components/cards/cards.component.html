@@ -1,0 +1,24 @@
+<div class="hero-villain-list">
+    <ul>
+      <div 
+        *ngFor="let heroVillain of heroesVillains" 
+        [ngClass]="{
+          'hero-card': heroVillain.aliniamiento === 'Heroe', 
+          'villain-card': heroVillain.aliniamiento === 'Villano',
+          'neutral-card': heroVillain.aliniamiento === 'Neutral'
+        }"
+        class="hero-villain-card"
+      >
+        <p style="align-items: self-start;"><span>{{heroVillain.id}}</span></p>
+        <img src="{{heroVillain.imgUrl}}">
+        <h3>{{ heroVillain.nombre }}</h3>
+        <p>Identidad: <span>{{ heroVillain.identidad }}</span></p>
+        <p>Universo: <span>{{ heroVillain.universo }}</span></p>
+        <p>Género: <span>{{ heroVillain.genero }}</span></p>
+        <p>Nivel de poder: <span>{{ heroVillain.nivel_de_Poder }}</span></p>
+        <p>Alineamiento: <span>{{ heroVillain.aliniamiento }}</span></p>
+      </div>
+    </ul>
+  </div>
+  
+ 

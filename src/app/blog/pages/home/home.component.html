@@ -1,0 +1,70 @@
+<div class="loading-screen" *ngIf="isLoading">
+  <div class="loading-text">Cargando...</div>
+</div>
+
+<div class="dropdown"  *ngIf="infRecibida === ''">
+  <button class="dropdown-toggle" type="button" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
+    <img src="https://cdn-icons-png.flaticon.com/512/943/943769.png" alt="Icono filtro" class="icono-filtro">
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#" (click)="filtro('Todos')">Todos</a>
+    <a class="dropdown-item" href="#" (click)="filtro('Heroes')">Solo Héroes</a>
+    <a class="dropdown-item" href="#" (click)="filtro('Villanos')">Solo Villanos</a>
+    <a class="dropdown-item" href="#" (click)="filtro('Neutrales')">Solo Neutrales</a>
+  </div>
+</div>
+
+<div class="reload-button" *ngIf="infRecibida !== ''">
+  <img src="https://cdn-icons-png.flaticon.com/512/5711/5711366.png" alt="Recargar" class="icono-reload" (click)="recargarPagina()">
+</div>
+
+<div class="container">
+  <!-- Mostrar todas las cartas -->
+  <div *ngIf="infRecibida === '' && infFiltro === ''" class="hero-villain-list">
+    <app-cards *ngFor="let card of cards | paginate: { itemsPerPage: 20, currentPage: page }" [cardId]="card"
+      (idEmitter)="emitId($event)"></app-cards>
+  </div>
+
+  <!-- Filtrar por alineamiento -->
+  <div *ngIf="infRecibida === '' && (infFiltro === 'good' || infFiltro === 'bad' || infFiltro === 'neutral')" class="hero-villain-list custom-width" style="margin-bottom: 20%;" 
+    [ngStyle]="{ 'margin-bottom': cardsFilter2.length <= 4 && infRecibida !== '' ? '50%' : '0%' }">
+    <app-cards *ngFor="let card of cardsFilter2 | paginate: { itemsPerPage: 20, currentPage: page }" [cardId]="card"
+      (idEmitter)="emitId($event)"></app-cards>
+  </div>
+
+  <!-- Buscar por nombre -->
+  <div *ngIf="infRecibida !== ''" class="hero-villain-list custom-width" style="margin-bottom: 20%;" 
+    [ngStyle]="{ 'margin-bottom': cardsFilter.length <= 4 && infRecibida !== '' ? '50%' : '0%' }">
+    <app-cards *ngFor="let card of cardsFilter | paginate: { itemsPerPage: 20, currentPage: page }" [cardId]="card"
+      (idEmitter)="emitId($event)"></app-cards>
+
+    <!-- Mensaje de no resultados -->
+    <div class="hero-villain-list" *ngIf="cardsFilter.length === 0" style="margin-left:200px ; margin-right: 200px;">
+      <h1 class="fade-out" style="margin-top: 60%; margin-bottom: 60%;">No se encontraron resultados
+        <br>
+        <p style="text-align: center;">(╥﹏╥)</p>
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div>
+  <footer class="pagination">
+    <div class="pagination-buttons" style="width: 100%!important;">
+      <div class="my-pagination">
+        <pagination-controls (pageChange)="page = $event" previousLabel="anterior"></pagination-controls>
+      </div>
+    </div>
+
+    <form [formGroup]="formPage" style="width: 100%!important;">
+      Page #:
+      <input type="number" placeholder="..." formControlName="pagina" style="margin-left: 20px; padding: 7px;"
+        name="pagina" id="pagina">
+      <button class="custom-btn" name="ir" id="ir" (click)="ir()" [disabled]="formPage.invalid">Ir</button>
+    </form>
+    <br>
+    <div class="icono-container">
+      <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRU-uY287bJT1vc6Okl7oiGgaS6sSJhgS7N36HHUESydkNpC0fx" class="icono">
+    </div>
+  </footer>
+</div>

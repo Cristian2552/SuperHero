@@ -1,0 +1,31 @@
+
+<div class="navbar">
+
+    <div class="icono-container">
+        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRU-uY287bJT1vc6Okl7oiGgaS6sSJhgS7N36HHUESydkNpC0fx" class="icono">
+    </div>
+
+    <div class="titulo-container">
+        <h1>Héroes y Villanos</h1>
+    </div>
+
+    <form [formGroup]="formFilter">
+        <div class="search-container">
+            <input type="text"
+                   placeholder="Buscar..."
+                   class="forms-control"
+                   formControlName="filterCards"
+                   name="filterCards"
+                   id="filterCards"
+                   value="text"
+                   (keyup.enter)="filtrar()"
+                   pattern="^[^\s].*"
+                   title="El primer carácter no puede ser un espacio.">
+            <img src="https://cdn-icons-png.flaticon.com/512/8823/8823465.png"
+                 class="icono_buscar search-container"
+                 (click)="filtrar()">
+        </div>
+    </form>
+    
+
+</div>

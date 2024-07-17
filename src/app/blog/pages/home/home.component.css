@@ -1,0 +1,298 @@
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    max-width: 1200px;
+    min-width: 500px;
+    margin: 20px auto;
+    
+}
+
+.fade-out {
+    animation: fadeOut 5s forwards;
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 3;
+    }
+    0% {
+      opacity: 0;
+    }
+  }
+
+
+  .icono-reload {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .fixed-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f1f1f100; /* Ajusta este color según tu diseño */
+    text-align: center;
+    padding: 0px 0; /* Ajusta el padding según sea necesario */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Opcional: añade un poco de sombra */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-toggle {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+  
+  .dropdown-toggle:focus {
+    outline: none;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background-color: #333333;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border: 1px solid #333333;
+    border-radius: 4px;
+    
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #DC3545;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .icono-filtro {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 8px; /* Ajusta el margen derecho según sea necesario */
+  }
+  
+  
+  
+.hero-villain-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    min-height: 345px;
+    padding: 15px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+  }
+  
+
+.hero-villain-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-villain-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hero-villain-list li {
+    margin: 10px;
+}
+
+
+
+
+.pagination {
+    display: flex;
+    align-items: center !important;
+    justify-content: space-between; /* Distribuye los elementos a lo largo del footer */
+    align-items: center;
+    margin: 20px 0;
+    margin-bottom: 2px !important;
+    max-width: 100%;
+    height: 80px;
+    padding: 10px 20px; /* Ajusta el espaciado interno del footer */
+    background-color: #333;
+    color: white;
+    position: relative; /* Permite posicionar elementos relativos a este contenedor */
+}
+
+.pagination-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.pagination input {
+    font-style: oblique;
+    font-family: sans-serif;
+    text-align: center;
+    width: 30px;
+    margin-left: 10px;
+}
+
+.custom-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.7rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-left: 1%;
+}
+
+.custom-btn:hover {
+    background-color: #c82333;
+}
+
+
+.icono {
+    width: 80px; /* Tamaño fijo del icono */
+    height: auto; 
+    border-radius: 50%;/* Mantener proporciones */
+}
+
+.icono-container {
+    margin-left: auto; /* Mueve el contenedor del icono completamente a la derecha */
+}
+
+
+.pagination {
+    display: flex;
+    align-items: center !important;
+    justify-content: space-between;
+    margin: 20px 0;
+    margin-bottom: 2px !important;
+    max-width: 100%;
+    height: 80px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: relative;
+  }
+  
+  
+  
+
+  .my-pagination ::ng-deep .ngx-pagination .current {
+    background: #DC3545;
+    border-radius: 3px;
+    
+  }
+  .my-pagination ::ng-deep .ngx-pagination a {
+    color: white; /* Texto blanco */
+    transition: background-color 0.3s; /* Transición para el cambio de color de fondo */
+  }
+  
+  .my-pagination ::ng-deep .ngx-pagination a:hover {
+    background-color:#DC3545; /*#c82333
+    border-radius: 3px; /* Fondo rojo al pasar el cursor */
+  }
+  
+
+
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1; /* Iniciar con opacidad al máximo */
+    animation: fadeOutScreen 7s forwards; /* Animación de 10 segundos */
+  }
+  
+  .loading-text {
+    font-size: 48px;
+    font-weight: bold;
+    animation: pulse 1s infinite; /* Animación de pulso normal */
+  }
+  
+  @keyframes fadeOutScreen {
+    0% {
+      opacity: 1; /* Al inicio, opacidad al máximo */
+    }
+    99.9% {
+      opacity: 1; /* Mantener opacidad al máximo hasta el segundo 10 */
+    }
+    100% {
+      opacity: 0; /* Al segundo 10, opacidad al mínimo instantáneamente */
+      visibility: hidden;
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  
+}
+
+.icono-filtro {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.hero-villain-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.custom-width {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fade-out {
+  animation: fadeOut 2s ease-in-out;
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}
+
+
+
+

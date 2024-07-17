@@ -1,0 +1,58 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    align-items: center;
+    padding-top: 4px !important;
+    margin-top: 1px !important;
+    margin: 20px 0;
+    background-color: #333;
+    color: white;
+    height: 80px;
+    padding: 0 20px; 
+    /* Ajusta el espaciado interno de la barra de navegación */
+}
+
+.icono {
+    width: 80px; /* Tamaño fijo del icono */
+    height: auto; /* Mantener proporciones */
+    border-radius: 50%; /* Para hacer el icono circular */
+}
+
+.titulo-container {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    max-width: 300px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-container img {
+    background-color: #DC3545;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+
+.icono_buscar {
+   
+    max-width: 17px; /* Tamaño fijo del icono */
+    height: auto; /* Mantener proporciones */
+    border-radius: 50%; /* Para hacer el icono circular */
+}
