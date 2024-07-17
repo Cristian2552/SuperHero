@@ -36,9 +36,8 @@ export class HomeComponent implements OnInit {
   }
 
 
-
   formPage = new FormGroup({
-    'pagina': new FormControl('', [Validators.required, Validators.min(1), Validators.max(37)])
+    'pagina': new FormControl('1', [Validators.required, Validators.min(1), Validators.max(37)])
   });
 
   ngOnInit(): void {
@@ -92,6 +91,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+
+    this.page = 1;
+    
     this.infFiltro = ""; //reinicia el filtro para buscar entre todos los personajes...
     if (this.infRecibida) {
       this.isLoading = true; // Activar la pantalla de carga
